@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.min.css') }}">
+    <!--<link href="https://fonts.googleapis.com/css?family=Changa+One|Open+Sans" rel="stylesheet">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <meta name="viewpoint" content="with=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="{{ url_for('index') }}" class="logo" id="icon">
+        <h1>Diwa Blog</h1>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Blog</a></li>
+          <li><a href="{{ url_for('addpost') }}">Add Post</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('contact') }}"">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+      {% block content %}{% endblock %}
+      <footer>
+        <a href="http://facebook.com/example"><img src="{{ url_for('static', filename='img/facebook.jpeg') }}" alt="Facebook Logo" class="social-icon"></a>
+        <a href="http://linkedin.com/example"><img src="{{ url_for('static', filename='img/linkedin.jpeg') }}" alt="LinkedIn Logo" class="social-icon"></a>
+        <a href="http://twitter.com/example"><img src="{{ url_for('static', filename='img/twitter.jpg') }}" alt="Twitter Logo" class="social-icon"></a>
+        <div id="copy">
+          <p>&copy; 2018 Diwa.</p>
+        </div>
+        <div id="dev">
+          <p><em>Developed by Chokuwamba Francis</em></p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

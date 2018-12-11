@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Diwa Blog | View post{% endblock %}
+
+{% block content %}
+<section>
+	<a href="{{ url_for('index') }}">All</a>
+	{% for post in posts %}
+	<div>
+		<h1>{{ post.title }}</h1>
+		<h3>{{ post.subtitle }}</h3>
+		<span><em>Posted by {{ post.author }} on {{ post.created_at.strftime('%d %B %Y %H:%M:%S') }}</em></span>
+		<p>{{ post.content | safe }}</p>
+		<hr>
+	</div>
+	{% endfor %}
+</section>
+{% endblock %}
